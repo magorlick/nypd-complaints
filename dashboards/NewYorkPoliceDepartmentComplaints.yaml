@@ -1,0 +1,63 @@
+# Visit https://docs.rilldata.com/ to learn more about Rill code artifacts.
+
+display_name: "New York Police Department Complaints"
+model: "nypd_complaint_transformed"
+timeseries: "report_date"
+measures:
+  - label: "Unique Complaints"
+    expression: "COUNT(DISTINCT complaint_number)"
+    description: "Unique complaints"
+    format_preset: humanize
+  - label: "Unique Offenses"
+    expression: "COUNT(DISTINCT offense_code)"
+    description: "Unique offenses"
+    format_preset: humanize
+  - label: "Average Reporting Latency (Days)"
+    expression: "AVG(reporting_latency)"
+    description: "The average number of days between the occurrence and filing the report"
+    format_preset: humanize
+dimensions:
+  - label: Legal Category
+    property: law_category
+    description: "Legal category of the offense"
+  - label: Premise Description
+    property: premise_description
+    description: "Specific description of premises"
+  - label: Location of Occurance
+    property: location_of_occurance
+    description: "Specific location of occurrence in or around the premises; inside,
+      opposite of, front of, rear of"
+  - label: Location Borough
+    property: location_borough
+    description: "The name of the borough in which the incident occurred"
+  - label: Patrol Borough
+    property: patrol_borough
+    description: "The name of the patrol borough in which the incident occurred"
+  - label: Description
+    property: description
+    description: "Description of offense"
+  - label: Jurisdiction Description
+    property: jurisdiction_description
+    description: "Description of the jurisdiction"
+  - label: Attempt Completed
+    property: attempt_completed
+    description: "Indicator of whether crime was successfully completed or
+      attempted, but failed or was interrupted prematurely"
+  - label: Victim Sex
+    property: victim_sex
+    description: ""
+  - label: Victim Race
+    property: victim_race
+    description: ""
+  - label: Victim Age Group
+    property: victim_age_group
+    description: ""
+  - label: Suspect Sex
+    property: suspect_sex
+    description: ""
+  - label: Suspect Race
+    property: suspect_race
+    description: ""
+  - label: Suspect Age Group
+    property: suspect_age_group
+    description: ""
